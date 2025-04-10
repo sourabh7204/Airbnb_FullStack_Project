@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const listing = require("./models/listing.js");
 const Listing = require("./models/listing.js");
+const path = require("path");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/WanderLust";
 
@@ -18,13 +19,26 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
+//Index Route
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
-  res.render("index.ejs", { allListings });
+  res.render("listings/index.ejs", { allListings });
+});
+
+//Show Route
+app.get("/listings/:id", async (req, res) => {
+  let { id } = req.params;
+  const listing = await Listing.findById(id);
+  res.render("listings/show", { listing }); // will look for views/listings/show.ejs
 });
 
 // app.get("/testlisting", async (req, res) => {
