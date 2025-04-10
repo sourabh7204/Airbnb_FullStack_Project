@@ -8,8 +8,14 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    type: String,
-    set: (v) => (v === "" ? "default link" : v),
+    type: {
+      filename: String,
+      url: String,
+    },
+    default: {
+      filename: "default",
+      url: "https://unsplash.com/photos/sunset-on-the-beach-with-a-surfer-NgvCdjrW1tE",
+    },
   },
   price: Number,
   location: String,
@@ -17,4 +23,4 @@ const listingSchema = new Schema({
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
-modules.export = Listing;
+module.exports = Listing;
