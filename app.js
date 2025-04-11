@@ -34,11 +34,23 @@ app.get("/listings", async (req, res) => {
   res.render("listings/index.ejs", { allListings });
 });
 
+//New Route
+app.get("/listings/new", (req, res) => {
+  res.render("listings/new.ejs");
+});
+
 //Show Route
 app.get("/listings/:id", async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
   res.render("listings/show", { listing }); // will look for views/listings/show.ejs
+});
+
+//Cteate Route
+app.post("/listings", async (req, res) => {
+  // let { title, description, price, image, country, location } = req.body;
+  let listing = req.body.listing;
+  console.log(listing);
 });
 
 // app.get("/testlisting", async (req, res) => {
