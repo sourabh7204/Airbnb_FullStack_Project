@@ -1,21 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//all data we need
 const listingSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    require: true,
   },
   description: String,
   image: {
-    type: {
-      filename: String,
-      url: String,
-    },
-    default: {
-      filename: "default",
-      url: "https://unsplash.com/photos/sunset-on-the-beach-with-a-surfer-NgvCdjrW1tE",
-    },
+    type: String,
+    set: (v) =>
+      v === ""
+        ? "https://i.pinimg.com/736x/86/28/44/8628446445eb6c971d1546b3eadb33f4.jpg"
+        : v,
   },
   price: Number,
   location: String,
