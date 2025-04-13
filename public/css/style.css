@@ -23,12 +23,14 @@
   color: #222222;
 }
 
-.f-info-links {
+.f-info-links,
+.f-info-socials {
   width: 100%;
 }
 
 .f-info-socials {
-  width: 100%;
+  font-size: 1.2rem;
+  margin-right: 1rem;
 }
 
 .f-info-links a:hover {
@@ -36,11 +38,12 @@
 }
 
 .f-info {
-  text-align: center;
-  height: 8rem;
-  background-color: #ebebeb;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: space-evenly;
+  text-align: center;
+  background-color: #ebebeb;
+  height: 8rem;
+  padding: 1rem;
 }
