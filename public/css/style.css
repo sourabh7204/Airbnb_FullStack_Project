@@ -132,3 +132,7 @@ body {
 .show-img {
   height: 30vh;
 }
+
+delete.btn {
+  background-color: #222222;
+}
