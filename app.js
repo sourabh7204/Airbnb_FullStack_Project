@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
+const { listingSchema } = require("./schema.js");
 
 // Database connection
 const MONGO_URL = "mongodb://127.0.0.1:27017/WanderLust";
@@ -37,6 +38,17 @@ app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
+//Middleware for Joi Schema Validation
+const validateListing = (req, res, next) => {
+  let { error } = listingSchema.validate(req.body);
+  if (error) {
+    let errMsg = error.details.map((el) => el.message).join(",");
+    throw new ExpressError(400, errMsg);
+  } else {
+    next();
+  }
+};
+
 // Index Route
 app.get(
   "/listings",
@@ -65,6 +77,7 @@ app.get(
 // Create Route
 app.post(
   "/listings",
+  validateListing,
   wrapAsync(async (req, res) => {
     const newListing = new Listing(req.body.listing);
     await newListing.save();
@@ -86,6 +99,7 @@ app.get(
 // Update Route
 app.put(
   "/listings/:id",
+  validateListing,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     await Listing.findByIdAndUpdate(id, { ...req.body.listing });
@@ -118,14 +132,14 @@ app.delete(
 // });
 
 // Catch-all for invalid routes
-app.all("*", (req, res, next) => {
-  next(new ExpressError(404, "Page Not Found!"));
+app.all(/.*/, (req, res, next) => {
+  next(new ExpressError(404, "Page Not Found"));
 });
 
 // Error handler middleware
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong!" } = err;
-  res.status(statusCode).send(message);
+  res.status(statusCode).render("error", { err, message });
 });
 
 // Start server
