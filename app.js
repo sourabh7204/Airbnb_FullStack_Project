@@ -80,7 +80,7 @@ app.get(
   "/listings/:id",
   wrapAsync(async (req, res) => {
     const { id } = req.params;
-    const listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).populate("reviews");
     if (!listing) throw new ExpressError(404, "Listing not found");
     res.render("listings/show", { listing });
   })
