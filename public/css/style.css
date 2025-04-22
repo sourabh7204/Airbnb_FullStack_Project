@@ -56,6 +56,10 @@ body {
   align-items: space-evenly;
 }
 
+.nav-link {
+  color: #222222 !important;
+}
+
 /* Cards */
 .listing-card {
   border: none !important;
