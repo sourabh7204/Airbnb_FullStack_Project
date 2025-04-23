@@ -1,6 +1,6 @@
 const Joi = require("joi");
 const Listing = require("./models/listing");
-const review = require("./models/review");
+const Review = require("./models/review");
 
 module.exports.listingSchema = Joi.object({
   listing: Joi.object({
@@ -11,6 +11,13 @@ module.exports.listingSchema = Joi.object({
     price: Joi.number().required().min(0),
     image: Joi.string().allow("", null),
   }).required(),
+});
+
+//Middleware
+Listing.schema.post("findOneAndDelete", async (listing) => {
+  if (listing) {
+    await Review.deleteMany({ _id: { $in: listing.reviews } });
+  }
 });
 
 module.exports.reviewSchema = Joi.object({
