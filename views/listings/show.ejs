@@ -38,12 +38,14 @@
       </div>
     </div>
   </div>
-  <div class="col-8 offset-2 mb-3">
+
+  <!-- Review Form -->
+  <div class="col-8 offset-3 mb-3">
     <br />
     <hr />
     <h4>Leave a Review</h4>
     <form
-      action="/listings/<%=listing.id%>/reviews"
+      action="/listings/<%= listing.id %>/reviews"
       method="POST"
       novalidate
       class="needs-validation"
@@ -76,18 +78,20 @@
 
     <hr />
 
+    <!-- All Reviews Section -->
     <p><b>All Reviews</b></p>
-
-    <%for(review of listing.reviews){%>
     <div class="row">
-      <div class="card col-6">
-        <div class="card-body">
-          <h5 class="card-title">Jane Doe</h5>
-          <p class="card-text"><%=review.comment%></p>
-          <p class="card-text"><%=review.rating%></p>
+      <% for (review of listing.reviews) { %>
+      <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Jane Doe</h5>
+            <p class="card-text"><%= review.comment %></p>
+            <p class="card-text">Rating: <%= review.rating %> Stars</p>
+          </div>
         </div>
       </div>
-      <%}%>
+      <% } %>
     </div>
   </div>
 </div>
