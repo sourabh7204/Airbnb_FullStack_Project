@@ -5,7 +5,7 @@ const ExpressError = require("../utils/ExpressError.js");
 const { listingSchema, reviewSchema } = require("../schema.js");
 const Listing = require("../models/listing.js");
 
-//Middleware for Joi Schema Validation
+//Middleware for Joi Schema Validation.
 const validateListing = (req, res, next) => {
   let { error } = listingSchema.validate(req.body);
   if (error) {
