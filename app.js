@@ -8,6 +8,7 @@ const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema, reviewSchema } = require("./schema.js");
 const Review = require("./models/review.js");
 const { send } = require("process");
+const session = require("express-session");
 
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
@@ -35,6 +36,14 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
+
+const sessionOptions = {
+  secret: "mysupersecratestring",
+  resave: false,
+  saveUninitialized: true,
+};
+
+app.use(session(sessionOptions));
 
 // Root route
 app.get("/", (req, res) => {

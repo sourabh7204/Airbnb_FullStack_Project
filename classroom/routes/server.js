@@ -19,18 +19,25 @@ app.use(flash());
 // Middleware to make flash messages available in all views
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
   next();
 });
 
 app.get("/register", (req, res) => {
   let { name = "anonymous" } = req.query;
   req.session.name = name;
-  req.flash("success", "User registered successfully!");
+
+  if (name === "anonymous") {
+    req.flash("error", "User not registered...");
+  } else {
+    req.flash("success", "User registered successfully!");
+  }
+
   res.redirect("/hello");
 });
 
 app.get("/hello", (req, res) => {
-  res.render("page", { name: req.session.name, msg: req.flash("message") });
+  res.render("page.ejs", { name: req.session.name });
 });
 
 // app.get("/reqcount", (req, res) => {
