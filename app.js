@@ -74,19 +74,19 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/demouser", async (req, res, next) => {
-  try {
-    const fakeUser = new User({
-      email: "student@gmail.com",
-      username: "sigma-student",
-    });
+// app.get("/demouser", async (req, res, next) => {
+//   try {
+//     const fakeUser = new User({
+//       email: "student@gmail.com",
+//       username: "sigma-student",
+//     });
 
-    const registeredUser = await User.register(fakeUser, "helloworld");
-    res.send(registeredUser);
-  } catch (err) {
-    next(err);
-  }
-});
+//     const registeredUser = await User.register(fakeUser, "helloworld");
+//     res.send(registeredUser);
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
