@@ -6,6 +6,11 @@ body {
   min-height: 100vh;
 }
 
+/* This is the new class for the sticky footer */
+.main-content {
+  flex-grow: 1;
+}
+
 /* Navbar */
 .navbar {
   height: 5rem;
@@ -21,10 +26,24 @@ body {
   color: #222222 !important;
 }
 
-/* Footer */
+/* UPDATED Footer */
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .f-info-links a {
   text-decoration: none;
   color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
 }
 
 .f-info-links,
@@ -34,30 +53,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .f-info-socials {
   font-size: 1.2rem;
   margin-right: 1rem;
-}
-
-.f-info-links a:hover {
-  text-decoration: underline;
-}
-
-.f-info {
-  text-align: center;
-  height: 8rem;
-  background-color: #ebebeb;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: space-evenly;
-}
-
-.nav-link {
-  color: #222222 !important;
 }
 
 /* Cards */
@@ -137,6 +138,7 @@ body {
   height: 30vh;
 }
 
-delete.btn {
+/* CORRECTED delete button class */
+.delete-btn {
   background-color: #222222;
 }
