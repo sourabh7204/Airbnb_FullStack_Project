@@ -35,8 +35,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw; /* Corrected 'Width' to 'width' for consistency, though it works either way */
+  position: fixed; /* Corrected 'Position' to 'position' */
+  bottom: 0rem; /* Corrected 'Bottom' to 'bottom' */
+  left: 0;
 }
-
 .f-info-links a {
   text-decoration: none;
   color: #222222;
