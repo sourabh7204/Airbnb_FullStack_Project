@@ -36,7 +36,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw; /* Corrected 'Width' to 'width' for consistency, though it works either way */
-  position: fixed; /* Corrected 'Position' to 'position' */
+  position: flex; /* Corrected 'Position' to 'position' */
   bottom: 0rem; /* Corrected 'Bottom' to 'bottom' */
   left: 0;
 }
