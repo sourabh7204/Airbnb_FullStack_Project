@@ -36,12 +36,14 @@ body {
   justify-content: center;
   align-items: center;
   /* width: 100vw;  */
-  position: absolute;
-  position: relative;
+  /* position: absolute;
+  position: relative; */
   bottom: 0rem;
   left: 0px;
   /* width: 100vw; */
   /* position: fixed; */
+  position: fixed;
+  width: 100vw;
   bottom: 0px;
   left: 0px;
 }
