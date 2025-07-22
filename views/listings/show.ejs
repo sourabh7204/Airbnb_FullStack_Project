@@ -21,7 +21,7 @@
             <p><%= listing.country %></p>
           </p>
 
-           <% if(currUser && currUser._id.equals(listing.owner._id)){%>
+           
           <div class="d-flex justify-content-between mt-4">
             <a
               href="/listings/<%= listing._id %>/edit"
@@ -36,7 +36,7 @@
               <button class="btn btn-dark delete-btn">Delete</button>
             </form>
           </div>  
-        <%}%>
+        
         </div>
       </div>
     </div>
