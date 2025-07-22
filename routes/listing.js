@@ -59,6 +59,7 @@ router.post(
   validateListing,
   wrapAsync(async (req, res) => {
     const newListing = new Listing(req.body.listing);
+    newListing.owner = req.user._id;
     await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect("/listings");
@@ -87,9 +88,15 @@ router.put(
   validateListing,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
+    let listing = await Listing.findById(id);
+    if (!currUser && listing.owner._id.equals(res.locals.currUser._id)) {
+      req.flash("errror", "You don't have permission to edit");
+      res.redirect(`listings/${id}`);
+    }
+
     await Listing.findByIdAndUpdate(id, { ...req.body.listing });
     req.flash("success", "Listing Updated!");
-    res.redirect("/listings");
+    res.redirect(`/listings/${id}`);
   })
 );
 

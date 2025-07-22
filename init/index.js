@@ -22,7 +22,7 @@ const initDB = async () => {
     ...obj,
     owner: "687bcc8f3b99805c7a7343f2",
   }));
-  await Listing.insertMany(newData);
+  await Listing.insertMany(initData.data);
   console.log("Data was Initialized");
 };
 
