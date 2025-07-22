@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
-const { isLoggedIn, isOwner, validateListing } = require("../middleware.js"); // Corrected this line
+const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 
 // Index Route
 router.get(
