@@ -3,6 +3,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
   flex-direction: column;
+  justify-content: between;
   min-height: 100vh;
 }
 
