@@ -40,7 +40,7 @@ module.exports.createListing = async (req, res) => {
   res.redirect("/listings");
 };
 
-module.exports.editListing = async (req, res) => {
+module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
   const listing = await Listing.findById(id);
   if (!listing) {
@@ -57,7 +57,7 @@ module.exports.updateListing = async (req, res) => {
   res.redirect(`/listings/${id}`);
 };
 
-module.exports.deleteListing = async (req, res) => {
+module.exports.destroyListing = async (req, res) => {
   const { id } = req.params;
   await Listing.findByIdAndDelete(id);
   req.flash("success", "Listing Deleted!");
