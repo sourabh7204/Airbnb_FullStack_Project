@@ -153,3 +153,9 @@ body {
 .delete-btn {
   background-color: #222222;
 }
+
+.preview-image {
+  width: 200px;
+  height: 100px;
+  max-width: 100%;
+}
