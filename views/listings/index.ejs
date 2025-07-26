@@ -4,6 +4,8 @@
   #filters {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+
   }
   .filter {
     text-align: center;
@@ -18,8 +20,17 @@
   .filter p {
     font-size: 0.8rem;
   }
-  #tax-info{
-   display: none ; 
+  .tax-info{
+    display: none ;
+  }
+  .tax-toggle{
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
   }
 </style>
 
@@ -60,11 +71,19 @@
     <div><i class="fa-solid fa-snowflake"></i></div>
     <p>Arctic</p>
   </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-igloo"></i></div>
+    <p>Domes</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-ship"></i></div>
+    <p>Boats</p>
+  </div>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
-  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-  <label class="form-check-label" for="switchCheckDefault">Display total before taxes</label>
-</div>
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display total before taxes</label>
+    </div>
   </div>
 </div>
 
@@ -86,8 +105,8 @@
         <p class="card-text">
           <b><%= listing.title %></b> <br />
           <% if (listing.price) { %> &#8377; <%=
-          listing.price.toLocaleString("en-IN") %> / night 
-          <i id="tax-info">&nbsp;&nbsp; +18% GST</i><% } %>
+          listing.price.toLocaleString("en-IN") %> / night
+          <i class="tax-info">&nbsp;&nbsp; +18% GST</i><% } %>
         </p>
       </a>
     </div>
@@ -96,8 +115,15 @@
 </div>
 
 <script>
-  let taxSwitch = document.getElementById("switchCheckDefault");
-  taxSwitch.addEventListener("click",()=>{
-    console.log("clicked");
-  })
+    let taxSwitch = document.getElementById("switchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for (info of taxInfo) {
+            if (info.style.display != "inline") {
+                info.style.display = "inline";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    });
 </script>
