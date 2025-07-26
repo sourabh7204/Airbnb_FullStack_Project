@@ -36,6 +36,12 @@ const listingSchema = new Schema({
       required: true,
     },
   },
+
+  //=>By this we can Add filters to our projects
+  // category: {
+  //   type: string,
+  //   enum: ["mountains", "arctic", "deserts"],
+  // },
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
