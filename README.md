@@ -82,81 +82,7 @@ Copy code
 node app.js
 Visit 👉 http://localhost:8080
 
-☁️ Deployment Guide (Render/Heroku)
-Deploying to Render (Free Hosting)
-Push your project to GitHub.
 
-Go to Render → New → Web Service.
-
-Connect your GitHub repo and select this project.
-
-Set:
-
-Build Command:
-
-bash
-Copy code
-npm install
-Start Command:
-
-bash
-Copy code
-node app.js
-Environment Variables:
-Add MONGO_URL (use MongoDB Atlas for cloud DB).
-
-Deploy 🎉 → Render will give you a live URL.
-
-Deploying to Heroku
-Install the Heroku CLI:
-
-bash
-Copy code
-npm install -g heroku
-Login:
-
-bash
-Copy code
-heroku login
-Initialize Git (if not already):
-
-bash
-Copy code
-git init
-git add .
-git commit -m "Deploy WanderLust"
-Create a Heroku app:
-
-bash
-Copy code
-heroku create wanderlust-clone
-Set environment variable:
-
-bash
-Copy code
-heroku config:set MONGO_URL=<your_mongodb_atlas_url>
-Deploy:
-
-bash
-Copy code
-git push heroku main
-Visit:
-
-bash
-Copy code
-heroku open
-📡 API & Routes
-Method	Route	Description
-GET	/	Root route (test)
-GET	/listings	Show all listings
-GET	/listings/new	Form to create a listing
-POST	/listings	Add a new listing
-GET	/listings/:id	View single listing
-GET	/listings/:id/edit	Edit listing form
-PUT	/listings/:id	Update a listing
-DELETE	/listings/:id	Delete listing
-POST	/listings/:id/reviews	Add review
-DELETE	/listings/:id/reviews/:reviewId	Delete review
 
 📸 Screenshots (UI Samples)
 (Add screenshots for better presentation — recruiters love visuals!)
@@ -195,9 +121,8 @@ Using MVC architecture for maintainability
 Want to improve or suggest features?
 Feel free to open an issue or PR!
 
-👨‍💻 Author
-Sourabh Vishwakarma
+## 👨‍💻 Author
 
-🌐 GitHub
-
-💼 LinkedIn
+**Sourabh Vishwakarma**  
+- 🌐 [GitHub](https://github.com/sourabh7204)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/sourabh7204)  
