@@ -46,8 +46,6 @@ WanderLust allows users to **explore, create, edit, and delete accommodation lis
 ├── package.json # Project dependencies & scripts
 └── README.md # Documentation
 
-yaml
-Copy code
 
 ---
 
@@ -67,35 +65,46 @@ cd Airbnb_FullStack_Project
 # Install dependencies
 npm install
 Environment Variables
+
 Create a .env file in the root and add:
 
-env
-Copy code
 MONGO_URL=mongodb://127.0.0.1:27017/WanderLust
+
 Seed the Database
-bash
-Copy code
 node init/index.js
+
 Start the Server
-bash
-Copy code
 node app.js
+
+
 Visit 👉 http://localhost:8080
 
-
-
+📡 API & Routes
+Method	Route	Description
+GET	/	Root route (test)
+GET	/listings	Show all listings
+GET	/listings/new	Form to create a listing
+POST	/listings	Add a new listing
+GET	/listings/:id	View single listing
+GET	/listings/:id/edit	Edit listing form
+PUT	/listings/:id	Update a listing
+DELETE	/listings/:id	Delete listing
+POST	/listings/:id/reviews	Add review
+DELETE	/listings/:id/reviews/:reviewId	Delete review
 📸 Screenshots (UI Samples)
+
 (Add screenshots for better presentation — recruiters love visuals!)
 
-Home Page (Listings)
+🏡 Home Page (Listings)
 
-Create New Listing
+➕ Create New Listing
 
-Listing Details + Reviews
+📝 Listing Details + Reviews
 
-Edit Listing
+✏️ Edit Listing
 
 📌 What I Learned
+
 Building scalable RESTful APIs with Express
 
 Designing MongoDB schemas & relationships
@@ -107,6 +116,7 @@ Writing modular middleware for validation & error handling
 Using MVC architecture for maintainability
 
 🔮 Future Improvements
+
 🔑 Add Authentication & Authorization (JWT or Passport.js)
 
 📸 Image Uploads with Cloudinary or AWS S3
@@ -118,11 +128,14 @@ Using MVC architecture for maintainability
 📍 Integrate Google Maps API for location-based listings
 
 🤝 Contributing
+
 Want to improve or suggest features?
 Feel free to open an issue or PR!
 
-## 👨‍💻 Author
+👨‍💻 Author
 
-**Sourabh Vishwakarma**  
-- 🌐 [GitHub](https://github.com/sourabh7204)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/sourabh7204)  
+Sourabh Vishwakarma
+
+🌐 GitHub
+
+💼 LinkedIn
