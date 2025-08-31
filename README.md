@@ -2,7 +2,7 @@
 
 Welcome to **WanderLust**, a full-stack clone of Airbnb built using **Node.js**, **Express.js**, **MongoDB**, and **EJS** templating. This project lets users explore, create, edit, and delete travel accommodation listings — all wrapped in a clean UI and powerful backend.
 
-![Project Preview]([./path-to-your-screenshot.png](https://airbnb-project-qk0s.onrender.com/listings))
+![Project Preview](https://airbnb-project-qk0s.onrender.com/listings)
 
 ---
 
