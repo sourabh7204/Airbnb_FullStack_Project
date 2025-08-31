@@ -64,7 +64,7 @@ cd Airbnb_FullStack_Project
 # Install dependencies
 npm install
 ```
-Environment Variables
+##Environment Variables
 
 Create a .env file in the root and add:
 MONGO_URL=mongodb://127.0.0.1:27017/WanderLust
@@ -78,43 +78,8 @@ Copy code
 node app.js
 Now open 👉 http://localhost:8080
 
-☁️ Deployment Guide
-Deploying on Render
-Push your project to GitHub.
 
-On Render, create a New Web Service.
-
-Connect your repo and configure:
-
-Build Command → npm install
-
-Start Command → node app.js
-
-Environment Variables → Add MONGO_URL (use MongoDB Atlas).
-
-Deploy 🎉 → You’ll get a live URL.
-
-Deploying on Heroku
-Install Heroku CLI → npm install -g heroku
-
-Login → heroku login
-
-Initialize git and commit →
-
-bash
-Copy code
-git init
-git add .
-git commit -m "Deploy WanderLust"
-Create app → heroku create wanderlust-clone
-
-Add env variable → heroku config:set MONGO_URL=<your_mongodb_atlas_url>
-
-Deploy → git push heroku main
-
-Open → heroku open
-
-📡 API & Routes
+##📡 API & Routes
 Method	Route	Description
 GET	/	Root route (test)
 GET	/listings	Show all listings
@@ -149,7 +114,7 @@ Writing modular middleware for validation & error handling
 
 Applying MVC architecture for maintainability
 
-🔮 Future Improvements
+🔮 ##Future Improvements
 🔑 Add Authentication & Authorization (JWT or Passport.js)
 
 📸 Image Uploads with Cloudinary or AWS S3
@@ -160,7 +125,7 @@ Applying MVC architecture for maintainability
 
 📍 Integrate Google Maps API for location-based listings
 
-🤝 Contributing
+🤝 ##Contributing
 Want to improve or suggest features?
 Feel free to open an issue or PR!
 
