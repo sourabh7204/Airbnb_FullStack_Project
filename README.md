@@ -12,23 +12,23 @@ WanderLust allows users to **explore, create, edit, and delete accommodation lis
 
 ## ✨ Key Features
 
-- 🏡 **Listings CRUD** → Create, Read, Update, Delete listings  
-- 📝 **Reviews with Validation** → Add & manage reviews (Joi validation)  
-- ⚠️ **Custom Error Handling** → Centralized error system (`ExpressError`)  
-- 🎨 **Dynamic UI** → Server-side rendering with **EJS + ejs-mate** layouts  
-- 🔄 **RESTful Routing** → Clean, scalable, modular route structure  
-- 💾 **MongoDB Persistence** → Data stored & retrieved with **Mongoose**  
-- 🧩 **Middleware Support** → Validation, routing, and error handling  
+- 🏡 Create, Read, Update, and Delete Listings  
+- 📝 Add and manage Reviews with Joi validation  
+- ⚠️ Centralized error handling using `ExpressError`  
+- 🎨 Server-side rendering with **EJS + ejs-mate** layouts  
+- 🔄 RESTful, modular route structure  
+- 💾 MongoDB + Mongoose for persistent storage  
+- 🧩 Middleware for validation and error handling  
 
 ---
 
 ## 🧰 Tech Stack
 
-**Backend:** Node.js, Express.js, MongoDB, Mongoose  
-**Templating:** EJS + ejs-mate (layout inheritance)  
-**Validation:** Joi (schema validation)  
-**Styling:** Bootstrap + custom CSS (from `public/`)  
-**Dev Tools:** Nodemon, Method-Override  
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose  
+- **Templating:** EJS + ejs-mate (layout inheritance)  
+- **Validation:** Joi  
+- **Styling:** Bootstrap + custom CSS  
+- **Dev Tools:** Nodemon, Method-Override  
 
 ---
 
@@ -46,14 +46,13 @@ WanderLust allows users to **explore, create, edit, and delete accommodation lis
 ├── package.json # Project dependencies & scripts
 └── README.md # Documentation
 
-
 ---
 
 ## 🚀 Getting Started (Local Setup)
 
 ### Prerequisites
-- Install [Node.js](https://nodejs.org/)  
-- Install and run [MongoDB](https://www.mongodb.com/try/download/community) locally  
+- [Node.js](https://nodejs.org/) installed  
+- [MongoDB](https://www.mongodb.com/try/download/community) running locally  
 
 ### Installation
 
@@ -64,35 +63,71 @@ cd Airbnb_FullStack_Project
 
 # Install dependencies
 npm install
+```
 Environment Variables
 
 Create a .env file in the root and add:
-
 MONGO_URL=mongodb://127.0.0.1:27017/WanderLust
-
 Seed the Database
+bash
+Copy code
 node init/index.js
-
 Start the Server
+bash
+Copy code
 node app.js
+Now open 👉 http://localhost:8080
 
+☁️ Deployment Guide
+Deploying on Render
+Push your project to GitHub.
 
-Visit 👉 http://localhost:8080
+On Render, create a New Web Service.
+
+Connect your repo and configure:
+
+Build Command → npm install
+
+Start Command → node app.js
+
+Environment Variables → Add MONGO_URL (use MongoDB Atlas).
+
+Deploy 🎉 → You’ll get a live URL.
+
+Deploying on Heroku
+Install Heroku CLI → npm install -g heroku
+
+Login → heroku login
+
+Initialize git and commit →
+
+bash
+Copy code
+git init
+git add .
+git commit -m "Deploy WanderLust"
+Create app → heroku create wanderlust-clone
+
+Add env variable → heroku config:set MONGO_URL=<your_mongodb_atlas_url>
+
+Deploy → git push heroku main
+
+Open → heroku open
 
 📡 API & Routes
 Method	Route	Description
 GET	/	Root route (test)
 GET	/listings	Show all listings
-GET	/listings/new	Form to create a listing
-POST	/listings	Add a new listing
+GET	/listings/new	Form to create listing
+POST	/listings	Add new listing
 GET	/listings/:id	View single listing
 GET	/listings/:id/edit	Edit listing form
-PUT	/listings/:id	Update a listing
+PUT	/listings/:id	Update listing
 DELETE	/listings/:id	Delete listing
 POST	/listings/:id/reviews	Add review
 DELETE	/listings/:id/reviews/:reviewId	Delete review
-📸 Screenshots (UI Samples)
 
+📸 Screenshots (UI Samples)
 (Add screenshots for better presentation — recruiters love visuals!)
 
 🏡 Home Page (Listings)
@@ -104,19 +139,17 @@ DELETE	/listings/:id/reviews/:reviewId	Delete review
 ✏️ Edit Listing
 
 📌 What I Learned
+Designing MongoDB schemas & relationships
 
 Building scalable RESTful APIs with Express
-
-Designing MongoDB schemas & relationships
 
 Implementing server-side rendering (SSR) with EJS
 
 Writing modular middleware for validation & error handling
 
-Using MVC architecture for maintainability
+Applying MVC architecture for maintainability
 
 🔮 Future Improvements
-
 🔑 Add Authentication & Authorization (JWT or Passport.js)
 
 📸 Image Uploads with Cloudinary or AWS S3
@@ -128,14 +161,11 @@ Using MVC architecture for maintainability
 📍 Integrate Google Maps API for location-based listings
 
 🤝 Contributing
-
 Want to improve or suggest features?
 Feel free to open an issue or PR!
 
-👨‍💻 Author
+## 👨‍💻 Author  
 
-Sourabh Vishwakarma
-
-🌐 GitHub
-
-💼 LinkedIn
+**Sourabh Vishwakarma**  
+- 🌐 [GitHub](https://github.com/sourabh7204)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/sourabh7204)  
