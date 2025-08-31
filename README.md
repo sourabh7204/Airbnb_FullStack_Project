@@ -1,128 +1,192 @@
-# 🌍 WanderLust - Airbnb FullStack Clone
+🌍 WanderLust – Airbnb Full-Stack Clone
 
-Welcome to **WanderLust**, a full-stack clone of Airbnb built using **Node.js**, **Express.js**, **MongoDB**, and **EJS** templating. This project lets users explore, create, edit, and delete travel accommodation listings — all wrapped in a clean UI and powerful backend.
+A production-ready Airbnb clone built with Node.js, Express.js, MongoDB, and EJS.
+WanderLust allows users to explore, create, edit, and delete accommodation listings, with reviews, validations, and clean UI integration.
 
-![Project Preview](https://airbnb-project-qk0s.onrender.com/listings)
+🚀 This project demonstrates real-world full-stack development skills — from REST APIs and database modeling to server-side rendering and error handling.
 
----
+🔗 Live Demo: WanderLust on Render
 
-## ✨ Features
+🔗 GitHub Repo: Airbnb_FullStack_Project
 
-- 📝 Create, Read, Update, and Delete Listings
-- 🛠 Custom error handling with `ExpressError`
-- 💬 Review system with validation using Joi
-- 🌐 Server-side rendering using EJS
-- ⚙️ RESTful routes & clean code structure
-- 📁 MongoDB-backed data persistence
-- 💡 Middleware for validation, error handling, and routing
+✨ Key Features
 
----
+🏡 Listings CRUD → Create, Read, Update, Delete listings
 
-## 🧰 Tech Stack
+📝 Reviews with Validation → Add & manage reviews (Joi validation)
 
-- **Backend**: Node.js, Express.js, MongoDB, Mongoose
-- **Templating Engine**: EJS with `ejs-mate` for layout inheritance
-- **Validation**: Joi for schema validation
-- **Styling**: Custom CSS (public folder) or Bootstrap (optional)
-- **Dev Tools**: Nodemon, Method-Override
+⚠️ Custom Error Handling → Centralized error system (ExpressError)
 
----
+🎨 Dynamic UI → Server-side rendering with EJS + ejs-mate layouts
 
-## 📁 Project Structure
+🔄 RESTful Routing → Clean, scalable, modular route structure
 
-```
-├── models/              # Mongoose schemas for Listing & Review
-├── routes/              # Express routers for modular route handling
-├── views/               # EJS views (layouts, includes, listings, error pages)
-│   ├── listings/        # index, show, new, edit views
-│   └── includes/        # Navbar and Footer
-├── utils/               # Reusable utilities like error handlers
+💾 MongoDB Persistence → Data stored & retrieved with Mongoose
+
+🧩 Middleware Support → Validation, routing, and error handling
+
+🧰 Tech Stack
+
+Backend: Node.js, Express.js, MongoDB, Mongoose
+Templating: EJS + ejs-mate (layout inheritance)
+Validation: Joi (schema validation)
+Styling: Bootstrap + custom CSS (from public/)
+Dev Tools: Nodemon, Method-Override
+
+📂 Project Structure
+├── models/              # Mongoose schemas (Listing, Review)
+├── routes/              # Express routers (listings, reviews)
+├── views/               # EJS templates
+│   ├── listings/        # index, show, new, edit
+│   └── includes/        # Navbar, Footer
+├── utils/               # Custom utilities (error handling, middleware)
 ├── public/              # Static assets (CSS, JS, images)
-├── init/                # DB seeding script with sample data
-├── app.js               # Main Express app
-├── package.json         # Project metadata and dependencies
-└── README.md            # This file
-```
+├── init/                # Database seeding script
+├── app.js               # Main Express app entry point
+├── package.json         # Project dependencies & scripts
+└── README.md            # Documentation
 
----
+🚀 Getting Started (Local Setup)
+Prerequisites
 
-## 🚀 Getting Started
+Install Node.js
 
-### Prerequisites
+Install and run MongoDB
+ locally
 
-- Node.js and npm installed
-- MongoDB installed and running locally
+Installation
+# Clone the repository
+git clone https://github.com/sourabh7204/Airbnb_FullStack_Project.git
+cd Airbnb_FullStack_Project
 
-### Installation
+# Install dependencies
+npm install
 
-1. Clone the repository:
+Environment Variables
 
-   ```bash
-   git clone https://github.com/sourabh7204/Airbnb_FullStack_Project.git
-   cd Airbnb_FullStack_Project
-   ```
+Create a .env file in the root and add:
 
-2. Install dependencies:
+MONGO_URL=mongodb://127.0.0.1:27017/WanderLust
 
-   ```bash
-   npm install
-   ```
+Seed the Database
+node init/index.js
 
-3. Create a `.env` file (optional) and set:
+Start the Server
+node app.js
 
-   ```env
-   MONGO_URL=mongodb://127.0.0.1:27017/WanderLust
-   ```
 
-4. Seed the database:
+Visit 👉 http://localhost:8080
 
-   ```bash
-   node init/index.js
-   ```
+☁️ Deployment Guide (Render/Heroku)
+Deploying to Render (Free Hosting)
 
-5. Start the server:
+Push your project to GitHub.
 
-   ```bash
-   node app.js
-   ```
+Go to Render
+ → New → Web Service.
 
-6. Visit `http://localhost:8080` in your browser.
+Connect your GitHub repo and select this project.
 
----
+Set:
 
-## 🧪 Routes Overview
+Build Command:
 
-| Method | Route | Description |
-|--------|-------|-------------|
-| GET    | `/`   | Root Test Route |
-| GET    | `/listings` | Show all listings |
-| GET    | `/listings/new` | Form to create new listing |
-| POST   | `/listings` | Submit new listing |
-| GET    | `/listings/:id` | Show single listing |
-| GET    | `/listings/:id/edit` | Edit form |
-| PUT    | `/listings/:id` | Update listing |
-| DELETE | `/listings/:id` | Delete listing |
-| POST   | `/listings/:id/reviews` | Add a review |
-| DELETE | `/listings/:id/reviews/:reviewId` | Delete review |
+npm install
 
----
 
-## 🖼 Screenshots
+Start Command:
 
-*You can update this section with screenshots of `index`, `new`, `show`, and `edit` views from your app.*
+node app.js
 
----
 
-## 🤝 Contributing
+Environment Variables:
+Add MONGO_URL (use MongoDB Atlas for cloud DB).
 
-If you'd like to contribute or suggest features, feel free to open an issue or pull request!
+Deploy 🎉 → Render will give you a live URL.
 
----
+Deploying to Heroku
 
-## 🙋‍♂️ Author
+Install the Heroku CLI:
 
-**Sourabh Vishwakarma**  
-[GitHub Profile](https://github.com/sourabh7204)
+npm install -g heroku
 
----
 
+Login:
+
+heroku login
+
+
+Initialize Git (if not already):
+
+git init
+git add .
+git commit -m "Deploy WanderLust"
+
+
+Create a Heroku app:
+
+heroku create wanderlust-clone
+
+
+Set environment variable:
+
+heroku config:set MONGO_URL=<your_mongodb_atlas_url>
+
+
+Deploy:
+
+git push heroku main
+
+
+Visit:
+
+heroku open
+
+📡 API & Routes
+Method	Route	Description
+GET	/	Root route (test)
+GET	/listings	Show all listings
+GET	/listings/new	Form to create a listing
+POST	/listings	Add a new listing
+GET	/listings/:id	View single listing
+GET	/listings/:id/edit	Edit listing form
+PUT	/listings/:id	Update a listing
+DELETE	/listings/:id	Delete listing
+POST	/listings/:id/reviews	Add review
+DELETE	/listings/:id/reviews/:reviewId	Delete review
+📸 Screenshots (UI Samples)
+
+(Add screenshots for better presentation — recruiters love visuals!)
+
+Home Page (Listings)
+
+Create New Listing
+
+Listing Details + Reviews
+
+Edit Listing
+
+📌 What I Learned
+
+Building scalable RESTful APIs with Express
+
+Designing MongoDB schemas & relationships
+
+Implementing server-side rendering (SSR) with EJS
+
+Writing modular middleware for validation & error handling
+
+Using MVC architecture for maintainability
+
+🤝 Contributing
+
+Want to improve or suggest features?
+Feel free to open an issue or PR!
+
+👨‍💻 Author
+
+Sourabh Vishwakarma
+
+🌐 GitHub
+
+💼 LinkedIn
